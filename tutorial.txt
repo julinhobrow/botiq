@@ -1,0 +1,14 @@
+1= baixar e instalar python
+https://www.python.org/downloads/
+
+2=baixar e instalar api da iqoption
+https://github.com/iqoptionapi/iqoptionapi
+use o comando => python setup.py install <= para instalar api
+
+se houver problema com login use comandos abaixo
+pip uninstall websocket-client
+pip install websocket-client==0.56
+
+3= instale modulo dateutil
+pip install python-dateutil
+
