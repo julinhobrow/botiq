@@ -238,8 +238,8 @@ def noticas(paridade):
 					# Verifica a diferença entre a hora da noticia e a hora da operação
 					minutesDiff = dif / 60
 
-					# Verifica se a noticia irá acontencer 30 min antes ou depois da operação
-					if minutesDiff >= -30 and minutesDiff <= 0 or minutesDiff <= 30 and minutesDiff >= 0:
+					# Verifica se a noticia irá acontencer 20 min antes ou depois da operação
+					if minutesDiff >= -20 and minutesDiff <= 0 or minutesDiff <= 20 and minutesDiff >= 0:
 						if impacto > 1:
 							return impacto, moeda, hora, True
 					else:
@@ -409,7 +409,7 @@ def entradas(status, id, par, dir, timeframe, opcao, n, valorGaleSinal):
 
 
 def Verificar_Tendencia(par, dir):
-	velas = API.get_candles(par, 60, 9, time.time())
+	velas = API.get_candles(par, 60, 14, time.time())
 	ultimo = round(velas[0]['close'], 4)
 	primeiro = round(velas[-1]['close'], 4)
 	diferenca = abs(round(((ultimo - primeiro) / primeiro) * 100, 3))
